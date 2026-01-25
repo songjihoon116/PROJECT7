@@ -4,8 +4,8 @@ import festivals from "../data/festivals_with_geo.json";
 import useStore from "../store/useStore";
 
 // 👇 기존 포토카드 기능 연결
-import { TownCard } from "../features/towns/components/TownCard";
-import { TownDetailModal } from "../features/towns/components/TownDetailModal";
+import { TownCard } from "../features/components/TownCard";
+import { TownDetailModal } from "../features/components/TownDetailModal";
 
 function After_Home() {
   const navigate = useNavigate();

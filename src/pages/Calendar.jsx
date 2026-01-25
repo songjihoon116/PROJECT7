@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
@@ -142,7 +142,7 @@ function Calendar() {
   };
 
   // ✅ pSeq로 축제 정보 로드 및 모달 오픈
-  const loadFestivalAndOpen = (pSeq) => {
+  const loadFestivalAndOpen = useCallback((pSeq) => {
     const festival = festivals.find((f) => String(f.pSeq) === String(pSeq));
     if (!festival) {
       alert("축제를 찾을 수 없습니다.");
@@ -167,7 +167,7 @@ function Calendar() {
     setModalOpen(true);
     setFestivalPSeq("");
     setShowFestivalInput(false);
-  };
+  }, []);
 
   // ---------- load events from Google ----------
   const fetchEvents = async (timeMinISO, timeMaxISO) => {

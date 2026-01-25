@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Map from "./pages/Map";
 import Calendar from "./pages/Calendar";
 import Signup from "./pages/Signup";
+import After_Home from "./pages/After_Home";
 import OAuthKakaoCallback from "./pages/OAuthKakaoCallback";
 
 
