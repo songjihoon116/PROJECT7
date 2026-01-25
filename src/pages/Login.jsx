@@ -33,7 +33,7 @@ function Login() {
     if (user && user.id === email && user.pw === pw) {
       setLogin(email, "local");
       alert("로그인 성공");
-      navigate("/", { replace: true });
+      navigate("/after_home", { replace: true });
     } else {
       alert("로그인 실패");
     }
@@ -47,7 +47,7 @@ function Login() {
     setGoogleAccessToken(tokenResponse.access_token);
     setLogin("google", "google");
     alert("구글 로그인 성공");
-    navigate("/", { replace: true });
+    navigate("/after_home", { replace: true });
   },
   onError: () => alert("구글 로그인 실패"),
 });

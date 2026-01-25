@@ -103,7 +103,7 @@ function Calendar() {
     });
 
     setTokenClient(tc);
-  }, [CLIENT_ID]);
+  }, [CLIENT_ID, googleAccessToken, loadFestivalAndOpen, selectedFestivalPSeq, setGoogleAccessToken, clearSelectedFestivalPSeq]);
 
   // ---------- helpers ----------
   const fmtK = (iso) => {
