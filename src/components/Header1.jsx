@@ -148,9 +148,6 @@ function Header() {
                 className="relative p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors"
               >
                 <Bell className="w-5 h-5" />
-                {upcomingTrips.length > 0 && (
-                  <span className="absolute top-1 right-1 block w-2.5 h-2.5 bg-red-500 rounded-full ring-2 ring-white" />
-                )}
               </button>
 
               {/* 알림 드롭다운 */}

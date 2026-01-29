@@ -141,13 +141,6 @@ const useStore = create(
         editingTripId: null,
         tripSchedules: {},
       }),
-
-      // 후기 작성용 축제 정보 초기화
-      clearReviewFestival: () => set({
-        selectedFestivalPSeq: null,
-        editingTripId: null,
-        tripSchedules: {},
-      }),
     }),
     {
       name: 'festory-storage', // localStorage 키 이름

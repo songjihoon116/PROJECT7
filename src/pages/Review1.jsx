@@ -38,8 +38,6 @@ const generateMockReviews = (festivalId) => {
 };
 
 function Review() {
-    // 후기 관련 정보 초기화 함수 가져오기
-    const clearReviewFestival = useStore((state) => state.clearReviewFestival);
   const navigate = useNavigate();
   const tripSchedules = useStore((state) => state.tripSchedules);
   const trips = useStore((state) => state.trips);
@@ -239,18 +237,6 @@ function Review() {
             }`}
           >
             📋 내 후기 ({reviews.length})
-          </button>
-          <button
-            onClick={() => {
-              if(window.confirm('저장된 축제 후기 관련 정보를 초기화하시겠습니까?')) {
-                clearReviewFestival();
-                alert('후기 관련 정보가 초기화되었습니다.');
-                window.location.reload();
-              }
-            }}
-            className="px-8 py-3 rounded-xl font-bold text-lg transition-all bg-white text-red-500 border-2 border-red-200 hover:bg-red-50"
-          >
-            🧹 후기 정보 초기화
           </button>
         </div>
 
@@ -498,15 +484,7 @@ function Review() {
                     {myReviewDetailModal.review.media && myReviewDetailModal.review.media.length > 0 && myReviewDetailModal.review.media.some(m => m.data && m.data.startsWith('data:')) && (
                       <div className="flex flex-wrap gap-6 mb-6">
                         {myReviewDetailModal.review.media.filter(m => m.data && m.data.startsWith('data:')).map((file, idx) => (
-                          <img
-                            key={idx}
-                            src={file.data}
-                            alt={file.name}
-                            className="w-60 h-60 object-cover rounded-xl border"
-                            onLoad={() => {
-                              console.log('이미지 로드:', file);
-                            }}
-                          />
+                          <img key={idx} src={file.data} alt={file.name} className="w-60 h-60 object-cover rounded-xl border" />
                         ))}
                       </div>
                     )}
