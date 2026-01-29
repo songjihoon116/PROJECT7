@@ -18,7 +18,7 @@ function Header() {
 
   return (
     <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
-      <div className="max-w-[95%] mx-auto px-6">
+      <div className="max-w-[84%] mx-auto px-4 sm:px-6 lg:px-8">
         {/* 🔑 핵심: relative */}
         <div className="flex items-center h-16 relative">
           {/* ================= 좌측 ================= */}
@@ -28,7 +28,8 @@ function Header() {
               <img
                 src={home_logo}
                 alt="Festory Logo"
-                className="h-12 w-auto object-contain"
+                className="w-30 h-20 object-cover"
+                style={{ background: 'linear-gradient(135deg, #FFA500 0%, #FFD700 100%)' }}
               />
             
             </Link>
@@ -52,7 +53,7 @@ function Header() {
           </div>
 
           {/* ================= 중앙 ================= */}
-          <div className="hidden lg:block ml-auto mr-2">
+          <div className="hidden lg:block absolute left-[79%] -translate-x-1/2 w-full max-w-xs">
             <div className="relative">
               <input
                 type="text"
@@ -77,10 +78,11 @@ function Header() {
           </div>
 
           {/* ================= 우측 ================= */}
-          <div className="flex items-center space-x-2">
+          <div className="ml-auto flex items-center space-x-5">
             {/* 알림 */}
             <button className="relative p-2 text-gray-600 hover:bg-gray-100 rounded-lg transition-colors">
               <Bell className="w-5 h-5" />
+              <span className="absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full" />
             </button>
 
             {/* 로그인 버튼 */}
